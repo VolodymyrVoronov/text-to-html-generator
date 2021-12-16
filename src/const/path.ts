@@ -1,6 +1,7 @@
 enum Paths {
   Root = "/",
   StartPage = "/start",
+  EditorPage = "/editor",
   NoPage = "*",
 }
 

@@ -28,13 +28,15 @@ const StartPageInputBlock = styled.div`
   display: flex;
   flex-direction: column;
 
-  min-height: 250px;
+  min-height: 225px;
 
   margin: 15px 0;
   padding: 15px;
 
-  border: 2px solid ${colors.blackOpacity02};
+  border: 2px solid ${colors.blackOpacity03};
   border-radius: 15px;
+
+  background-color: ${colors.blackOpacity01};
 `;
 
 const StartPageOutput = styled(StartPageInput)``;

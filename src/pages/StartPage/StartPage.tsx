@@ -1,8 +1,12 @@
 import { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import Paths from "const/path";
 
 import Typography from "components/Typography/Typography";
 import TypistAnimation from "components/TypistAnimation/TypistAnimation";
 import AnimatedWrapper from "components/common/AnimatedWrapper/AnimatedWrapper";
+import Button from "components/common/Button/Button";
 
 import {
   StartPageContainer,
@@ -14,6 +18,8 @@ import {
 } from "./StartPage.styled";
 
 const StartPage: FC<{}> = (): JSX.Element => {
+  const navigation = useNavigate();
+
   const [firstTextTyped, setFirstTextTyped] = useState<boolean>(false);
   const [secondTextTyped, setSecondTextTyped] = useState<boolean>(false);
   const [thirdTextTyped, setThirdTextTyped] = useState<boolean>(false);
@@ -22,9 +28,30 @@ const StartPage: FC<{}> = (): JSX.Element => {
   const secondTextTypingDoneHandler = () => setSecondTextTyped(() => true);
   const thirdTextTypingDoneHandler = () => setThirdTextTyped(() => true);
 
+  const onTryButtonClick = () =>
+    navigation(Paths.EditorPage, { replace: true });
+
   return (
     <StartPageContainer>
       <StartPageBody>
+        <AnimatedWrapper
+          initialValue={{ opacity: 0 }}
+          animateValue={{ opacity: 1 }}
+          transitionValue={{ ease: "easeOut", duration: 2 }}
+          styles={{ display: "flex", justifyContent: "center", width: "100%" }}
+        >
+          <Typography
+            styles={{
+              marginBottom: "75px",
+              fontSize: "36px",
+              fontWeight: "bold",
+              lineHeight: "42px",
+            }}
+          >
+            {"<p>"} Text to html {"</p>"}
+          </Typography>
+        </AnimatedWrapper>
+
         <StartPageInput>
           <Typography
             styles={{ display: "flex", fontSize: "36px", lineHeight: "42px" }}
@@ -33,8 +60,8 @@ const StartPage: FC<{}> = (): JSX.Element => {
           </Typography>
           <StartPageInputBlock>
             <TypistAnimation
-              avgTypingDelay={50}
-              startDelay={250}
+              avgTypingDelay={40}
+              startDelay={500}
               cursorHideWhenDone={true}
               onTypingDone={firstTextTypingDoneHandler}
               styles={{ margin: "7px 0", fontSize: "24px", fontWeight: 500 }}
@@ -44,8 +71,8 @@ const StartPage: FC<{}> = (): JSX.Element => {
 
             {firstTextTyped && (
               <TypistAnimation
-                avgTypingDelay={50}
-                startDelay={250}
+                avgTypingDelay={40}
+                startDelay={500}
                 cursorHideWhenDone={true}
                 onTypingDone={secondTextTypingDoneHandler}
                 styles={{ margin: "7px 0", fontSize: "24px", fontWeight: 500 }}
@@ -57,8 +84,8 @@ const StartPage: FC<{}> = (): JSX.Element => {
 
             {secondTextTyped && (
               <TypistAnimation
-                avgTypingDelay={50}
-                startDelay={250}
+                avgTypingDelay={40}
+                startDelay={500}
                 cursorHideWhenDone={true}
                 onTypingDone={thirdTextTypingDoneHandler}
                 styles={{ margin: "7px 0", fontSize: "24px", fontWeight: 500 }}
@@ -138,6 +165,27 @@ const StartPage: FC<{}> = (): JSX.Element => {
             )}
           </StartPageOutputBlock>
         </StartPageOutput>
+
+        <div
+          style={{
+            minHeight: "60px",
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {thirdTextTyped && (
+            <AnimatedWrapper
+              initialValue={{ x: -1500, opacity: 0 }}
+              animateValue={{ x: 0, opacity: 1 }}
+              transitionValue={{ ease: "easeOut", duration: 2, delay: 1 }}
+            >
+              <Button onClick={onTryButtonClick} ariaLabel="Try">
+                Try
+              </Button>
+            </AnimatedWrapper>
+          )}
+        </div>
       </StartPageBody>
     </StartPageContainer>
   );
