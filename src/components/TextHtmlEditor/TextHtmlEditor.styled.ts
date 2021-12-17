@@ -33,8 +33,8 @@ const TextHtmlEditorContainer = styled.div`
     display: block;
 
     width: 100%;
-
     min-height: 350px;
+
     padding: 5px;
 
     font-size: 18px;
@@ -44,7 +44,17 @@ const TextHtmlEditorContainer = styled.div`
     border-radius: 15px;
 
     background-color: ${colors.blackOpacity01};
+
+    cursor: default;
+    pointer-events: none;
   }
 `;
 
-export { TextHtmlEditorContainer };
+const TextHtmlEditorButtons = styled.div`
+  display: flex;
+  justify-content: center;
+
+  margin-top: 25px;
+`;
+
+export { TextHtmlEditorContainer, TextHtmlEditorButtons };

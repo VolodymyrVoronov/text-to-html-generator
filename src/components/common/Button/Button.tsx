@@ -3,7 +3,7 @@ import React, { memo, FC, CSSProperties } from "react";
 import { ButtonContainer } from "./Button.styled";
 
 interface IButtonProps {
-  onClick: () => void;
+  onClick: (e?: any) => void;
   disabled?: boolean;
   ariaLabel: string;
   styles?: CSSProperties;

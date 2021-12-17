@@ -181,7 +181,7 @@ const StartPage: FC<{}> = (): JSX.Element => {
               transitionValue={{ ease: "easeOut", duration: 2, delay: 1 }}
             >
               <Button onClick={onTryButtonClick} ariaLabel="Try">
-                Try
+                Try &#10140;
               </Button>
             </AnimatedWrapper>
           )}

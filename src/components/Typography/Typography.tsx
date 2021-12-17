@@ -1,4 +1,4 @@
-import { FC, CSSProperties } from "react";
+import React, { FC, CSSProperties } from "react";
 
 interface ITypographyProps {
   styles: CSSProperties;
