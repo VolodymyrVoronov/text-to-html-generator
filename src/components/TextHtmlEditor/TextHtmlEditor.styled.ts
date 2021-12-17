@@ -27,6 +27,10 @@ const TextHtmlEditorContainer = styled.div`
     border-radius: 15px;
 
     background-color: ${colors.blackOpacity01};
+
+    &:focus-within {
+      border-color: ${colors.black};
+    }
   }
 
   textarea {
