@@ -44,9 +44,6 @@ const TextHtmlEditorContainer = styled.div`
     border-radius: 15px;
 
     background-color: ${colors.blackOpacity01};
-
-    cursor: default;
-    pointer-events: none;
   }
 `;
 
