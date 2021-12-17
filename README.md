@@ -1,6 +1,6 @@
 ###### Text to HTML
 
-Online preview: [Text to HTML]( "Text to HTML")
+Online preview: [Text to HTML](https://volodymyrvoronov.github.io/text-to-html-generator/ "Text to HTML")
 
 To install the project on your pc/laptop just clone this repository and take following steps:
 
