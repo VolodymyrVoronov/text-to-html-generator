@@ -18,12 +18,12 @@ const EditorPage = lazy(
 );
 
 const App: FC<{}> = (): JSX.Element => {
-  const isMobileDevise =
+  const isMobileDevice =
     isMobile || isWearable || isAndroid || isIOS || isWinPhone;
 
   return (
     <>
-      {isMobileDevise ? (
+      {isMobileDevice ? (
         <Typography
           styles={{
             display: "flex",
